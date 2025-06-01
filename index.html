@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCCP V5.0</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🍽️ Meal Charge Calculator V5.0</h1>
+            <p>Calculate shared expenses and meal costs with precision</p>
+        </div>
+
+        <div class="content">
+            <!-- Basic Information Section -->
+            <div class="form-section">
+                <h2>📋 Basic Information</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="totalMembers">Number of Members:</label>
+                        <input type="number" id="totalMembers" min="1" max="50" placeholder="Enter number of members">
+                    </div>
+                    <div class="form-group">
+                        <label for="minMeal">Minimum Meal Count:</label>
+                        <input type="number" id="minMeal" min="1" placeholder="Enter minimum meal count">
+                    </div>
+                </div>
+                <button class="btn" onclick="setupMembers()">Setup Members</button>
+            </div>
+
+            <!-- Member Details Section -->
+            <div class="form-section member-inputs" id="memberInputs">
+                <h2>👥 Member Details</h2>
+                <div id="memberCards"></div>
+                <button class="btn" onclick="calculateCharges()">
+                    <span id="calculateBtn">Calculate Charges</span>
+                </button>
+            </div>
+
+            <!-- Results Section -->
+            <div class="results-section" id="resultsSection">
+                <div class="form-section">
+                    <h2>📊 Calculation Results</h2>
+                    
+                    <div class="summary" id="summary"></div>
+                    
+                    <div class="table-container">
+                        <table id="resultsTable">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Meal Expenses</th>
+                                    <th>Grocery Expenses</th>
+                                    <th>Meal Count</th>
+                                    <th>Meal Charge</th>
+                                    <th>Grocery Charge</th>
+                                    <th>Total Expenses</th>
+                                    <th>Total Charge</th>
+                                    <th>Give & Take</th>
+                                </tr>
+                            </thead>
+                            <tbody id="resultsBody"></tbody>
+                        </table>
+                    </div>
+
+                    <div class="transactions" id="transactions">
+                        <h3>💰 Payment Transactions</h3>
+                        <div id="transactionList"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
